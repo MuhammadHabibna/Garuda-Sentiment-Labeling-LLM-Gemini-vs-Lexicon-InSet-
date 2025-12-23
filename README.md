@@ -54,9 +54,9 @@ Berdasarkan hasil pelatihan selama 4 epoch, didapatkan perbedaan metrik yang kon
 
 Metrik Evaluasi | IndoBERT (Label InSet) | IndoBERT (Label Gemini)
 | :--- | :--- | :---|
-Akurasi Validasi | ~90.2% | ~71.1%
-F1-Macro | ~0.90 | ~0.70
-Kondisi Model | Stabil (Generalisasi Baik) | Overfitting (Loss Validasi Naik)
+Akurasi | ~88.7% | ~68.4%
+F1-Macro | ~88.2% | ~68.4%
+Kondisi Model | Stabil (Generalisasi Baik) | Stabil (Generalisasi Baik)
 
 Model yang dilatih dengan label InSet memiliki skor lebih tinggi karena konsistensi label berbasis kata kunci yang lebih mudah dipelajari oleh model. Sebaliknya, model Gemini mengalami overfitting yang dipicu oleh adanya noise pada pelabelan awal serta jumlah epoch yang terlalu tinggi untuk dataset ini dan kurangnya dataset sehingga gagal memahami banyak konteks (sarkas, dll).
 
