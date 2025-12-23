@@ -46,6 +46,31 @@ ID | Teks Komentar | Sentiment (Gemini) | Sentiment (InSet)
 305 | Raportnya tidak lebih bagus dari sty""" | Negative | Negative
 6 | Jangan pusing2, Erik n Towel aja suruh ngelatih.... biar tambah bagus timnasnya... | Negative | Negative
 
+## Eksperimen Lanjutan: Pemodelan IndoBERT-base-p1
+Setelah melakukan pelabelan, dilakukan fase pelatihan model menggunakan arsitektur IndoBERT-base-p1 untuk melihat bagaimana model Deep Learning mempelajari kedua jenis label tersebut.
+
+### **Perbandingan Performa Metrik**
+Berdasarkan hasil pelatihan selama 4 epoch, didapatkan perbedaan metrik yang kontras antara kedua model
+
+Metrik Evaluasi | IndoBERT (Label InSet) | IndoBERT (Label Gemini)
+| :--- | :--- | :---|
+Akurasi Validasi | ~90.2% | ~71.1%
+F1-Macro | ~0.90 | ~0.70
+Kondisi Model | Stabil (Generalisasi Baik) | Overfitting (Loss Validasi Naik)
+
+Model yang dilatih dengan label InSet memiliki skor lebih tinggi karena konsistensi label berbasis kata kunci yang lebih mudah dipelajari oleh model. Sebaliknya, model Gemini mengalami overfitting yang dipicu oleh adanya noise pada pelabelan awal serta jumlah epoch yang terlalu tinggi untuk dataset ini dan kurangnya dataset sehingga gagal memahami banyak konteks (sarkas, dll).
+
+### **Validasi Manusia (Uji Coba 10 Sampel Campuran)**
+Untuk menguji performa riil, kedua model diuji menggunakan 10 kalimat baru yang mengandung sarkasme, kata kasar, dan teks berita faktual.
+
+**A. Analisis Sarkasme** Secara mengejutkan, model InSet-trained justru lebih unggul dalam mendeteksi sarkasme. Hal ini dikarenakan label InSet memberikan sinyal negatif yang sangat kuat pada kata-kata "jangkar" (seperti: "kalah", "bingung", "ampas") yang berhasil dipelajari model sebagai indikator utama sentimen negatif, meskipun terdapat kata "bagus" di dalamnya.
+
+**B. Analisis Teks Netral (Berita/Fakta)** Model Gemini-trained menunjukkan keunggulan dalam mendeteksi teks netral atau informatif (seperti berita perpanjangan kontrak). Sebaliknya, model InSet-trained gagal mengidentifikasi kategori netral dan cenderung melabeli berita faktual sebagai sentimen positif atau negatif secara salah.
+
+## **Kesimpulan Eksperimen Pemodelan**
+1. IndoBERT + InSet: Sangat tangguh dalam mengenali emosi ekstrem dan sarkasme berbasis kata kunci negatif yang kuat, namun tidak mampu membedakan teks berita (netral).
+2. IndoBERT + Gemini: Memiliki pemahaman spektrum bahasa yang lebih luas (mampu mendeteksi teks netral), namun memerlukan pembersihan label (label cleaning) dan regulasi pelatihan yang lebih ketat untuk menangkap konteks sarkasme secara akurat.
+
 ## Sumber Daya dan Referensi
 Proyek ini mengintegrasikan repositori dan dataset open-source berikut:
 
