@@ -1,4 +1,4 @@
-<img width="790" height="428" alt="image" src="https://github.com/user-attachments/assets/c9a13175-e217-452e-a878-6090ba6c1523" /># Garuda Sentiment: LLM (Gemini) vs Lexicon (InSet)
+# Garuda Sentiment: LLM (Gemini) vs Lexicon (InSet)
 
 Studi komparatif mengenai performa Large Language Model (Gemini 2.5) melawan metode Lexicon tradisional (InSet) dalam menganalisis sentimen netizen sepak bola Indonesia terhadap pelatih John Herdman.
 
@@ -93,7 +93,14 @@ Proyek ini mengintegrasikan repositori dan dataset open-source berikut:
 
 ## Lampiran
 
-<img width="790" height="428" alt="image" src="https://github.com/user-attachments/assets/bb4e41fd-6627-46e7-84b7-96cdfb098bb9" />
+### Labeling Gemini
+<img width="378" height="141" alt="image" src="https://github.com/user-attachments/assets/dcc15c82-de23-4817-acbf-3c7009eb4cce" />
+
+### Labeling Inset
+<img width="390" height="150" alt="image" src="https://github.com/user-attachments/assets/99825d46-90b3-4180-a773-ac5eff8193d8" />
+
+
+
 
 
 ---
