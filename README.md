@@ -1,4 +1,4 @@
-# Garuda Sentiment: LLM (Gemini) vs Lexicon (InSet)
+<img width="790" height="428" alt="image" src="https://github.com/user-attachments/assets/c9a13175-e217-452e-a878-6090ba6c1523" /># Garuda Sentiment: LLM (Gemini) vs Lexicon (InSet)
 
 Studi komparatif mengenai performa Large Language Model (Gemini 2.5) melawan metode Lexicon tradisional (InSet) dalam menganalisis sentimen netizen sepak bola Indonesia terhadap pelatih John Herdman.
 
@@ -90,6 +90,11 @@ Proyek ini mengintegrasikan repositori dan dataset open-source berikut:
 2. Instalasi library melalui perintah: `pip install -r requirements.txt`.
 3. Konfigurasi API Key Gemini pada file skrip utama.
 4. Jalankan Jupyter Notebook atau file Python untuk melihat proses pelabelan dan visualisasi.
+
+## Lampiran
+
+<img width="790" height="428" alt="image" src="https://github.com/user-attachments/assets/bb4e41fd-6627-46e7-84b7-96cdfb098bb9" />
+
 
 ---
 
